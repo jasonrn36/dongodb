@@ -18,3 +18,28 @@ CREATE TABLE tbUsuario (
     cargo VARCHAR(50) NOT NULL,
     status VARCHAR(50) NOT NULL,
 );
+
+show tables;
+CREATE TABLE tbUsuario (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+    entrada VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    data_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    turno VARCHAR(50) NOT NULL,
+    cargo VARCHAR(50) NOT NULL,
+    status VARCHAR(50) NOT NULL
+);
+CREATE TABLE tbCadProdutos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    cod_produto INT (255) NOT NULL UNIQUE,
+    nome VARCHAR(255) NOT NULL,
+    descricao VARCHAR(100),
+    custo DECIMAL(10, 2) NOT NULL,
+    Estoque_min DECIMAL(10,2) NOT NULL,
+    Saldo_estoque DECIMAL(10,2) NOT NULL,
+    preco_venda DECIMAL(10, 2) NOT NULL,
+    data_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    observacao VARCHAR(255),
+);
+SHOW TABLES;
