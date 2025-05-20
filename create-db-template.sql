@@ -1,17 +1,20 @@
-CREATE DATABASE dongodb ;
-CREATE USER  'admin'@'localhost' IDENTIFIED BY 'admin' ;
-
-USE dongodb ;
+USE DONGODB ;
+SHOW TABLES ;
 CREATE TABLE Usuario (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    Matrícula VARCHAR(20) NOT NULL,
-    Nome VARCHAR(50) NOT NULL,
-    Sobrenome VARCHAR(50) NOT NULL,
-    Login VARCHAR(20) NOT NULL,
-    Senha VARCHAR(20) NOT NULL,
-    Turno VARCHAR(20) NOT NULL,
-    Cargo VARCHAR(20) NOT NULL,
-    Data_Cadastro DATE NOT NULL,
-    Data_Nascimento DATE NOT NULL,
-    Celular VARCHAR(20) NOT NULL,
+    nome VARCHAR(50) NOT NULL,
+    entrada VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    data_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+drop table Usuario;
+CREATE TABLE tbUsuario (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+    entrada VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    data_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    turno VARCHAR(50) NOT NULL,
+    cargo VARCHAR(50) NOT NULL,
+    status VARCHAR(50) NOT NULL,
 );
